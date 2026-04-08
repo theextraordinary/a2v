@@ -1,0 +1,5 @@
+moviepy
+pydub
+openai-whisper
+python-dotenv
+numpy
