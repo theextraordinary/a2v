@@ -7,6 +7,4 @@ def build_prompt(segments):
         'start, end, text, color, animation.'
     )
     payload = json.dumps(segments, ensure_ascii=True)
-    return system + '
-Input segments:
-' + payload
+    return system + '\nInput segments:\n' + payload

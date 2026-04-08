@@ -3,3 +3,4 @@ pydub
 openai-whisper
 python-dotenv
 numpy
+audioop-lts; python_version>='3.13'

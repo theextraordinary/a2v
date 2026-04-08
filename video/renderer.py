@@ -1,4 +1,4 @@
-from moviepy.editor import ColorClip, CompositeVideoClip, AudioFileClip
+from moviepy import ColorClip, CompositeVideoClip, AudioFileClip
 from .captions import make_caption_clip
 from .animations import fade_in, pop, slide_up
 
@@ -15,8 +15,8 @@ def render_video(styled_segments, audio_path, output_path, size=(1080, 1920), fp
         if end <= start:
             continue
         text_clip = make_caption_clip(seg['text'], color=seg['color'])
-        text_clip = text_clip.set_start(start).set_duration(end - start)
-        text_clip = text_clip.set_position(('center', 'center'))
+        text_clip = text_clip.with_start(start).with_duration(end - start)
+        text_clip = text_clip.with_position(('center', 'center'))
 
         anim = seg.get('animation', 'fade_in')
         if anim == 'pop':
@@ -29,7 +29,7 @@ def render_video(styled_segments, audio_path, output_path, size=(1080, 1920), fp
         clips.append(text_clip)
 
     comp = CompositeVideoClip(clips, size=size)
-    comp = comp.set_audio(audio)
+    comp = comp.with_audio(audio)
     comp.write_videofile(str(output_path), fps=fps, codec='libx264', audio_codec='aac')
     comp.close()
     audio.close()

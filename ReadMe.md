@@ -14,6 +14,7 @@ pip install -r requirements.txt
 ```
 
 2. Ensure FFmpeg and ImageMagick are installed (MoviePy uses them for video and text rendering).
+3. If you are on Python 3.13+, `pydub` needs `audioop-lts` (included in `requirements.txt`).
 
 ## Run
 
@@ -28,6 +29,19 @@ Then run:
 ```bash
 python app/main.py
 ```
+
+### Edge Simulation Mode
+
+Use edge simulation for lower resource usage and latency logging:
+
+```bash
+python app/main.py --edge
+```
+
+Options:
+- `--edge-real-asr` to use Whisper instead of a mock transcription
+- `--edge-max-duration 20` to cap processed audio length (seconds)
+- `--edge-latency 0.2` to simulate per-step latency (seconds)
 
 The output video will be written to:
 
@@ -55,4 +69,5 @@ data/output/final.mp4
 ## Notes
 
 - Default output size is 1080x1920 with centered captions.
+- Edge mode uses 540x960 at 24 fps.
 - Styling rules are rule-based for now, but can be swapped with an API call later.
