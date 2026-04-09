@@ -4,3 +4,7 @@ openai-whisper
 python-dotenv
 numpy
 audioop-lts; python_version>='3.13'
+fastapi
+uvicorn
+requests
+python-multipart

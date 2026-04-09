@@ -1,73 +1,84 @@
 # AI Audio-to-Video (A2V) Pipeline
 
-This project converts an input audio file into a vertical video with styled captions. It simulates an edge-to-cloud (E2B/E4B) workflow:
+Production-grade, edge-cloud separated A2V system:
 
-- Edge (E2B): ASR, silence segmentation, and emotion classification
-- Cloud (E4B): Caption styling based on emotions
+```
+Audio -> Edge Processing (E2B) -> Cloud Reasoning (E4B) -> Timeline JSON -> Video Rendering
+```
+
+## Architecture Diagram
+
+```
+        +---------------------+          +---------------------+
+        |   Edge Service      |          |   Cloud Service     |
+        |  /process_audio     |          | /generate_timeline  |
+        +----------+----------+          +----------+----------+
+                   |                                |
+               segments JSON                  timeline JSON
+                   |                                |
+                   +-------------+  +--------------+
+                                 |  |
+                              app/main.py
+                                 |
+                           video renderer
+```
 
 ## Setup
-
-1. Create a virtual environment and install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Ensure FFmpeg and ImageMagick are installed (MoviePy uses them for video and text rendering).
-3. If you are on Python 3.13+, `pydub` needs `audioop-lts` (included in `requirements.txt`).
+Ensure FFmpeg and ImageMagick are installed (MoviePy uses them for video and text rendering).
 
-## Run
+If you are on Python 3.13+, `audioop-lts` is required for `pydub` (included in `requirements.txt`).
+FastAPI file uploads require `python-multipart` (included in `requirements.txt`).
 
-Place your audio at:
+## Run Edge + Cloud
 
+```bash
+bash run_edge.sh
 ```
-data/input_audio/sample.wav
+
+```bash
+bash run_cloud.sh
 ```
 
-Then run:
+## Run Pipeline
 
 ```bash
 python app/main.py
 ```
 
-### Edge Simulation Mode
+## Environment Variables
 
-Use edge simulation for lower resource usage and latency logging:
+Set these in `.env`:
+- `GEMMA_API_KEY` (recommended) or `LLM_API_KEY` for cloud LLM access
+- `LLM_API_URL` (optional) default `https://api-inference.huggingface.co/models`
+- `LLM_MODEL` (optional) default `google/gemma-4-e4b-it`
+- `EDGE_URL` (optional) default `http://127.0.0.1:8000/process_audio`
+- `CLOUD_URL` (optional) default `http://127.0.0.1:9000/generate_timeline`
 
-```bash
-python app/main.py --edge
-```
+## Why Cloud API For E4B
 
-Options:
-- `--edge-real-asr` to use Whisper instead of a mock transcription
-- `--edge-max-duration 20` to cap processed audio length (seconds)
-- `--edge-latency 0.2` to simulate per-step latency (seconds)
+- avoids memory issues on local machines
+- scales independently of edge devices
+- production-ready and easy to monitor
 
-The output video will be written to:
+## API Endpoints
 
-```
-data/output/final.mp4
-```
+### Edge
+- `POST /process_audio`
+- Input: audio file
+- Output: `{ "segments": [ { "start", "end", "text", "emotion" } ] }`
 
-## Pipeline Overview
-
-1. **Edge (E2B)**
-   - `edge/asr.py`: Whisper transcription
-   - `edge/segmentation.py`: Silence-based segmentation
-   - `edge/emotion.py`: Rule-based emotion tagging
-   - `edge/processor.py`: Combines the above into structured segments
-
-2. **Cloud (E4B)**
-   - `cloud/prompt.py`: Builds an LLM-friendly prompt
-   - `cloud/stylist.py`: Simulates styling decisions
-   - `cloud/pipeline.py`: Produces styled captions
-
-3. **Audio & Video**
-   - `audio/cleaner.py`: Normalize and trim silence
-   - `video/renderer.py`: Creates a vertical black video and overlays captions
+### Cloud
+- `POST /generate_timeline`
+- Input: `{ "segments": [...] }`
+- Output: `{ "timeline": [ { "start", "end", "text", "color", "animation", "emphasis" } ] }`
 
 ## Notes
 
+- Cloud uses LLM to produce strictly validated JSON timeline.
+- Edge uses HuggingFace emotion model `j-hartmann/emotion-english-distilroberta-base`.
 - Default output size is 1080x1920 with centered captions.
-- Edge mode uses 540x960 at 24 fps.
-- Styling rules are rule-based for now, but can be swapped with an API call later.
