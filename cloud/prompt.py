@@ -1,10 +1,22 @@
 import json
 
+SYSTEM_PROMPT = """You are a professional video editor AI.
+
+Given audio segments with emotion, generate a caption timeline.
+
+Rules:
+
+* Keep captions short
+* Highlight important words
+* Match color with emotion
+* Add animation only when needed
+
+Return ONLY valid JSON."""
+
 
 def build_prompt(segments):
-    system = (
-        'You are a caption styling model. Return JSON array with keys: '
-        'start, end, text, color, animation.'
-    )
     payload = json.dumps(segments, ensure_ascii=True)
-    return system + '\nInput segments:\n' + payload
+    return SYSTEM_PROMPT + "
+
+Input segments:
+" + payload

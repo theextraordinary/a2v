@@ -1,8 +1,5 @@
 from pathlib import Path
-<<<<<<< HEAD
-=======
 import time
->>>>>>> a19e444 (Added basic files and folders)
 
 def ensure_dir(path):
     Path(path).mkdir(parents=True, exist_ok=True)
@@ -18,8 +15,6 @@ def ms_to_s(ms):
 
 def s_to_ms(s):
     return int(s * 1000)
-<<<<<<< HEAD
-=======
 
 
 class Timer:
@@ -40,4 +35,3 @@ class Timer:
 def edge_sleep(seconds):
     if seconds and seconds > 0:
         time.sleep(seconds)
->>>>>>> a19e444 (Added basic files and folders)
