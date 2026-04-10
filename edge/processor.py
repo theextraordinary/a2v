@@ -1,4 +1,4 @@
-from .asr import transcribe_audio
+from .asr import transcribe_audio, transcribe_words
 from .segmentation import segment_audio
 from .emotion import classify_emotion
 from utils.helpers import Timer, edge_sleep
@@ -43,3 +43,7 @@ def process_audio(audio_path, model_size='base', use_mock_asr=False, max_duratio
         })
 
     return refined
+
+
+def process_words(audio_path, model_size='base'):
+    return transcribe_words(audio_path, model_size=model_size)

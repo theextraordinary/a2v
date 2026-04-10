@@ -5,7 +5,7 @@ import tempfile
 import shutil
 import os
 
-from edge.processor import process_audio
+from edge.processor import process_audio, process_words
 
 app = FastAPI(title='A2V Edge Service')
 
@@ -27,5 +27,20 @@ async def process_audio_endpoint(file: UploadFile = File(...)):
     try:
         segments = process_audio(tmp_path, model_size='base', use_mock_asr=False)
         return {'segments': segments}
+    except Exception as e:
+        return JSONResponse(status_code=500, content={'error': str(e)})
+
+
+@app.post('/process_words')
+async def process_words_endpoint(file: UploadFile = File(...)):
+    suffix = Path(file.filename).suffix or '.wav'
+    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
+        with tmp as f:
+            shutil.copyfileobj(file.file, f)
+        tmp_path = tmp.name
+
+    try:
+        words = process_words(tmp_path, model_size='base')
+        return {'words': words}
     except Exception as e:
         return JSONResponse(status_code=500, content={'error': str(e)})

@@ -1,84 +1,132 @@
-# AI Audio-to-Video (A2V) Pipeline
+# A2V (Audio‑to‑Video) Pipeline
 
-Production-grade, edge-cloud separated A2V system:
-
-```
-Audio -> Edge Processing (E2B) -> Cloud Reasoning (E4B) -> Timeline JSON -> Video Rendering
-```
-
-## Architecture Diagram
+End‑to‑end A2V system that turns speech audio into a captioned video with synced word timing, optional background music, and structured edit metadata. The pipeline is designed for edge ASR + cloud text intelligence, with a clean rendering stage that can be replayed from a saved manifest.
 
 ```
-        +---------------------+          +---------------------+
-        |   Edge Service      |          |   Cloud Service     |
-        |  /process_audio     |          | /generate_timeline  |
-        +----------+----------+          +----------+----------+
-                   |                                |
-               segments JSON                  timeline JSON
-                   |                                |
-                   +-------------+  +--------------+
-                                 |  |
-                              app/main.py
-                                 |
-                           video renderer
+audio.wav
+  → word timestamps (WhisperX, Edge)
+  → transcript correction + important words + edit decisions (E2B URL)
+  → caption grouping
+  → frame rendering (silent.mp4)
+  → mix speech + bgm
+  → mux final video
+  → video_manifest.json (re‑render input)
 ```
 
-## Setup
+## Architecture (Current)
+
+```
+          +--------------------+                 +----------------------+
+          |    Edge Service    |                 |   E2B Endpoint URL   |
+          |  /process_words    |                 |   /generate (JSON)   |
+          +---------+----------+                 +----------+-----------+
+                    |                                       |
+         word timestamps (WhisperX)              transcript / important / edits
+                    |                                       |
+                    +------------------+--------------------+
+                                       |
+                                   app/main.py
+                                       |
+                     caption grouping + renderer + mux
+                                       |
+                             final.mp4 + manifest
+```
+
+## What Each Stage Does
+
+**Edge (E2B in name only here = edge)**
+- Runs ASR with WhisperX
+- Produces word‑level timestamps:
+  ```
+  [{"word": "...", "start": 0.10, "end": 0.32}, ...]
+  ```
+
+**Cloud (E2B URL)**
+- Corrects transcript
+- Extracts important words (for coloring)
+- Generates optional edit decisions (zoom/cut/etc.)
+- Endpoint: `POST /generate` with `{"prompt": "...", "max_new_tokens": N}`
+
+**Renderer**
+- Groups words into short phrases
+- Renders centered captions with consistent font
+- Highlights important words by color
+- Produces `silent.mp4`, then muxes audio
+
+**Manifest**
+Creates `data/output/video_manifest.json` so another model can re‑render without re‑running ASR or E2B.
+
+---
+
+# Setup
+
+## 1) Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Ensure FFmpeg and ImageMagick are installed (MoviePy uses them for video and text rendering).
+## 2) Install FFmpeg
+Movie rendering uses FFmpeg. Make sure it is available on PATH.
 
-If you are on Python 3.13+, `audioop-lts` is required for `pydub` (included in `requirements.txt`).
-FastAPI file uploads require `python-multipart` (included in `requirements.txt`).
+## 3) Configure `.env`
 
-## Run Edge + Cloud
+Create `.env` at repo root:
 
+```
+E2B_URL=https://your-ngrok-or-server-url
+EDGE_WORDS_URL=http://127.0.0.1:8000/process_words
+```
+
+---
+
+# Run
+
+## Edge service (WhisperX)
 ```bash
 bash run_edge.sh
 ```
 
+## Main pipeline
 ```bash
-bash run_cloud.sh
+python app/main.py --debug
 ```
 
-## Run Pipeline
+Output:
 
-```bash
-python app/main.py
+```
+data/output/final.mp4
+data/output/video_manifest.json
 ```
 
-## Environment Variables
+---
 
-Set these in `.env`:
-- `GEMMA_API_KEY` (recommended) or `LLM_API_KEY` for cloud LLM access
-- `LLM_API_URL` (optional) default `https://api-inference.huggingface.co/models`
-- `LLM_MODEL` (optional) default `google/gemma-4-e4b-it`
-- `EDGE_URL` (optional) default `http://127.0.0.1:8000/process_audio`
-- `CLOUD_URL` (optional) default `http://127.0.0.1:9000/generate_timeline`
+# Output Manifest
 
-## Why Cloud API For E4B
+`data/output/video_manifest.json` contains:
 
-- avoids memory issues on local machines
-- scales independently of edge devices
-- production-ready and easy to monitor
+- audio paths + duration
+- video size, fps, background, font
+- per‑word timestamps (with important flag)
+- caption groups
+- edit decisions
 
-## API Endpoints
+This allows re‑rendering without running E2B or WhisperX again.
 
-### Edge
-- `POST /process_audio`
-- Input: audio file
-- Output: `{ "segments": [ { "start", "end", "text", "emotion" } ] }`
+---
 
-### Cloud
-- `POST /generate_timeline`
-- Input: `{ "segments": [...] }`
-- Output: `{ "timeline": [ { "start", "end", "text", "color", "animation", "emphasis" } ] }`
+# Important Notes
 
-## Notes
+- WhisperX provides word‑level timestamps.
+- Captions are rendered in strict spoken order.
+- Important words are colored using E2B‑generated keywords.
+- Edit decisions are optional and non‑fatal if missing.
 
-- Cloud uses LLM to produce strictly validated JSON timeline.
-- Edge uses HuggingFace emotion model `j-hartmann/emotion-english-distilroberta-base`.
-- Default output size is 1080x1920 with centered captions.
+---
+
+# License
+
+**Copyright (c) 2026 ANIGMA Incorporation**
+
+All rights reserved.
+

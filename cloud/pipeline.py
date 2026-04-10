@@ -1,4 +1,4 @@
-from .stylist import generate_timeline
+from .stylist import generate_timeline, generate_edit_decisions
 
 
 def _fallback_style(segments):
@@ -45,3 +45,7 @@ def run_cloud_pipeline(segments):
             'emphasis': bool(styled.get('emphasis', False)),
         })
     return aligned
+
+
+def run_edit_decisions(text, words, captions):
+    return generate_edit_decisions(text, words, captions)

@@ -5,3 +5,6 @@ data/output/*
 *.mp4
 vasp
 .hf_cache
+logs/*
+data/*
+experiments/*

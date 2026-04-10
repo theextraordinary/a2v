@@ -8,3 +8,9 @@ fastapi
 uvicorn
 requests
 python-multipart
+transformers
+torch
+whisperx
+pillow
+imageio
+imageio-ffmpeg
