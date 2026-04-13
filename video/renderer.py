@@ -5,9 +5,24 @@ from .animations import fade_in, pop, slide_up, minimal
 
 def render_video(styled_segments, audio_path, output_path, size=(1080, 1920), fps=30):
     audio = AudioFileClip(str(audio_path))
-    duration = audio.duration
+    audio = audio.with_start(0)
+    duration = audio.duration or 0.0
+    if duration <= 0 and styled_segments:
+        duration = max(float(s['end']) for s in styled_segments)
+    if duration <= 0:
+        duration = 1.0
     base = ColorClip(size=size, color=(0, 0, 0), duration=duration)
     clips = [base]
+
+    if not styled_segments:
+        styled_segments = [{
+            'start': 0.0,
+            'end': duration,
+            'text': 'No captions generated',
+            'color': 'white',
+            'animation': 'minimal',
+            'emphasis': False,
+        }]
 
     for seg in styled_segments:
         start = max(0.0, float(seg['start']))
@@ -53,6 +68,13 @@ def render_video(styled_segments, audio_path, output_path, size=(1080, 1920), fp
 
     comp = CompositeVideoClip(clips, size=size)
     comp = comp.with_audio(audio)
-    comp.write_videofile(str(output_path), fps=fps, codec='libx264', audio_codec='aac')
+    comp.write_videofile(
+        str(output_path),
+        fps=fps,
+        codec='libx264',
+        audio_codec='aac',
+        audio=True,
+        audio_fps=44100,
+    )
     comp.close()
     audio.close()

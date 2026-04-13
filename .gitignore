@@ -3,7 +3,8 @@
 .env
 data/output/*
 *.mp4
-<<<<<<< HEAD
-=======
 vasp
->>>>>>> a19e444 (Added basic files and folders)
+.hf_cache
+logs/*
+data/*
+experiments/*

@@ -1,0 +1,1082 @@
+[
+  {
+    "word": "If",
+    "start": 0.111,
+    "end": 0.211
+  },
+  {
+    "word": "someone",
+    "start": 0.271,
+    "end": 0.631
+  },
+  {
+    "word": "you",
+    "start": 0.651,
+    "end": 0.751
+  },
+  {
+    "word": "know",
+    "start": 0.791,
+    "end": 0.951
+  },
+  {
+    "word": "died",
+    "start": 1.011,
+    "end": 1.251
+  },
+  {
+    "word": "today,",
+    "start": 1.331,
+    "end": 1.672
+  },
+  {
+    "word": "and",
+    "start": 2.852,
+    "end": 2.952
+  },
+  {
+    "word": "also",
+    "start": 3.012,
+    "end": 3.312
+  },
+  {
+    "word": "by",
+    "start": 3.552,
+    "end": 3.672
+  },
+  {
+    "word": "stabbing,",
+    "start": 3.732,
+    "end": 4.112
+  },
+  {
+    "word": "he",
+    "start": 5.333,
+    "end": 5.453
+  },
+  {
+    "word": "might",
+    "start": 5.513,
+    "end": 5.753
+  },
+  {
+    "word": "be",
+    "start": 5.813,
+    "end": 5.933
+  },
+  {
+    "word": "Julius",
+    "start": 5.973,
+    "end": 6.313
+  },
+  {
+    "word": "Caesar.",
+    "start": 6.333,
+    "end": 6.653
+  },
+  {
+    "word": "Welcome",
+    "start": 7.113,
+    "end": 7.473
+  },
+  {
+    "word": "to",
+    "start": 7.513,
+    "end": 7.633
+  },
+  {
+    "word": "EMTH",
+    "start": 7.793,
+    "end": 8.114
+  },
+  {
+    "word": "today.",
+    "start": 8.334,
+    "end": 8.674
+  },
+  {
+    "word": "Today",
+    "start": 9.574,
+    "end": 9.914
+  },
+  {
+    "word": "is",
+    "start": 10.014,
+    "end": 10.134
+  },
+  {
+    "word": "15th",
+    "start": 10.154,
+    "end": 10.394
+  },
+  {
+    "word": "March,",
+    "start": 10.454,
+    "end": 10.734
+  },
+  {
+    "word": "and",
+    "start": 11.475,
+    "end": 11.575
+  },
+  {
+    "word": "it",
+    "start": 11.715,
+    "end": 11.775
+  },
+  {
+    "word": "is",
+    "start": 11.835,
+    "end": 11.915
+  },
+  {
+    "word": "famously",
+    "start": 11.955,
+    "end": 12.395
+  },
+  {
+    "word": "known",
+    "start": 12.455,
+    "end": 12.655
+  },
+  {
+    "word": "as",
+    "start": 12.755,
+    "end": 12.855
+  },
+  {
+    "word": "Ides",
+    "start": 13.195,
+    "end": 13.535
+  },
+  {
+    "word": "of",
+    "start": 13.675,
+    "end": 13.755
+  },
+  {
+    "word": "March.",
+    "start": 13.835,
+    "end": 14.135
+  },
+  {
+    "word": "This",
+    "start": 14.276,
+    "end": 14.416
+  },
+  {
+    "word": "is",
+    "start": 14.476,
+    "end": 14.536
+  },
+  {
+    "word": "because",
+    "start": 14.616,
+    "end": 14.956
+  },
+  {
+    "word": "in",
+    "start": 15.136,
+    "end": 15.216
+  },
+  {
+    "word": "44",
+    "start": 15.336,
+    "end": 15.536
+  },
+  {
+    "word": "BC,",
+    "start": 15.836,
+    "end": 16.236
+  },
+  {
+    "word": "the",
+    "start": 16.956,
+    "end": 17.056
+  },
+  {
+    "word": "brutal",
+    "start": 17.096,
+    "end": 17.437
+  },
+  {
+    "word": "assassination",
+    "start": 17.457,
+    "end": 18.017
+  },
+  {
+    "word": "of",
+    "start": 18.057,
+    "end": 18.117
+  },
+  {
+    "word": "Julius",
+    "start": 18.197,
+    "end": 18.597
+  },
+  {
+    "word": "Caesar",
+    "start": 18.637,
+    "end": 18.977
+  },
+  {
+    "word": "happened",
+    "start": 19.017,
+    "end": 19.317
+  },
+  {
+    "word": "today.",
+    "start": 19.337,
+    "end": 19.597
+  },
+  {
+    "word": "This",
+    "start": 19.637,
+    "end": 19.757
+  },
+  {
+    "word": "led",
+    "start": 19.817,
+    "end": 19.997
+  },
+  {
+    "word": "to",
+    "start": 20.017,
+    "end": 20.117
+  },
+  {
+    "word": "the",
+    "start": 20.137,
+    "end": 20.197
+  },
+  {
+    "word": "collapse",
+    "start": 20.237,
+    "end": 20.618
+  },
+  {
+    "word": "of",
+    "start": 20.658,
+    "end": 20.718
+  },
+  {
+    "word": "the",
+    "start": 20.778,
+    "end": 20.858
+  },
+  {
+    "word": "Roman",
+    "start": 20.918,
+    "end": 21.238
+  },
+  {
+    "word": "Republic,",
+    "start": 21.278,
+    "end": 21.738
+  },
+  {
+    "word": "and",
+    "start": 22.218,
+    "end": 22.298
+  },
+  {
+    "word": "eventually",
+    "start": 22.318,
+    "end": 22.838
+  },
+  {
+    "word": "the",
+    "start": 23.098,
+    "end": 23.178
+  },
+  {
+    "word": "rise",
+    "start": 23.258,
+    "end": 23.478
+  },
+  {
+    "word": "of",
+    "start": 23.518,
+    "end": 23.599
+  },
+  {
+    "word": "Roman",
+    "start": 23.679,
+    "end": 23.939
+  },
+  {
+    "word": "Empire",
+    "start": 23.979,
+    "end": 24.359
+  },
+  {
+    "word": "at",
+    "start": 24.739,
+    "end": 24.839
+  },
+  {
+    "word": "two",
+    "start": 24.879,
+    "end": 25.019
+  },
+  {
+    "word": "grotesque.",
+    "start": 25.039,
+    "end": 25.399
+  },
+  {
+    "word": "Whereas",
+    "start": 25.759,
+    "end": 26.159
+  },
+  {
+    "word": "in",
+    "start": 26.419,
+    "end": 26.499
+  },
+  {
+    "word": "1493,",
+    "start": 26.519,
+    "end": 26.699
+  },
+  {
+    "word": "Our",
+    "start": 28.62,
+    "end": 28.76
+  },
+  {
+    "word": "boy",
+    "start": 28.84,
+    "end": 29.14
+  },
+  {
+    "word": "Columbus",
+    "start": 29.2,
+    "end": 29.681
+  },
+  {
+    "word": "returned",
+    "start": 29.721,
+    "end": 30.041
+  },
+  {
+    "word": "to",
+    "start": 30.081,
+    "end": 30.181
+  },
+  {
+    "word": "Spain",
+    "start": 30.221,
+    "end": 30.641
+  },
+  {
+    "word": "after",
+    "start": 31.261,
+    "end": 31.501
+  },
+  {
+    "word": "first",
+    "start": 31.621,
+    "end": 31.901
+  },
+  {
+    "word": "voyage",
+    "start": 31.961,
+    "end": 32.261
+  },
+  {
+    "word": "across",
+    "start": 32.301,
+    "end": 32.662
+  },
+  {
+    "word": "Atlantic.",
+    "start": 32.722,
+    "end": 33.262
+  },
+  {
+    "word": "This",
+    "start": 34.342,
+    "end": 34.522
+  },
+  {
+    "word": "man",
+    "start": 34.642,
+    "end": 34.862
+  },
+  {
+    "word": "single-handedly",
+    "start": 34.962,
+    "end": 35.963
+  },
+  {
+    "word": "connected",
+    "start": 36.283,
+    "end": 36.703
+  },
+  {
+    "word": "Europe",
+    "start": 36.843,
+    "end": 37.163
+  },
+  {
+    "word": "and",
+    "start": 37.203,
+    "end": 37.303
+  },
+  {
+    "word": "America.",
+    "start": 37.343,
+    "end": 37.683
+  },
+  {
+    "word": "And",
+    "start": 37.884,
+    "end": 37.984
+  },
+  {
+    "word": "if",
+    "start": 38.024,
+    "end": 38.084
+  },
+  {
+    "word": "you're",
+    "start": 38.104,
+    "end": 38.304
+  },
+  {
+    "word": "born",
+    "start": 38.364,
+    "end": 38.724
+  },
+  {
+    "word": "on",
+    "start": 38.804,
+    "end": 38.904
+  },
+  {
+    "word": "15th",
+    "start": 39.004,
+    "end": 39.444
+  },
+  {
+    "word": "March,",
+    "start": 39.544,
+    "end": 39.864
+  },
+  {
+    "word": "then",
+    "start": 40.384,
+    "end": 40.545
+  },
+  {
+    "word": "maybe",
+    "start": 40.605,
+    "end": 40.885
+  },
+  {
+    "word": "you",
+    "start": 40.925,
+    "end": 41.065
+  },
+  {
+    "word": "enjoy",
+    "start": 41.105,
+    "end": 41.425
+  },
+  {
+    "word": "gazing",
+    "start": 41.485,
+    "end": 41.805
+  },
+  {
+    "word": "to",
+    "start": 41.885,
+    "end": 42.005
+  },
+  {
+    "word": "the",
+    "start": 42.045,
+    "end": 42.125
+  },
+  {
+    "word": "night",
+    "start": 42.165,
+    "end": 42.385
+  },
+  {
+    "word": "sky.",
+    "start": 42.425,
+    "end": 42.885
+  },
+  {
+    "word": "Because",
+    "start": 43.706,
+    "end": 44.086
+  },
+  {
+    "word": "the",
+    "start": 44.846,
+    "end": 44.946
+  },
+  {
+    "word": "famous",
+    "start": 45.006,
+    "end": 45.366
+  },
+  {
+    "word": "scientist",
+    "start": 45.426,
+    "end": 46.027
+  },
+  {
+    "word": "and",
+    "start": 46.287,
+    "end": 46.387
+  },
+  {
+    "word": "astronomer,",
+    "start": 46.447,
+    "end": 47.127
+  },
+  {
+    "word": "Jonas",
+    "start": 47.707,
+    "end": 48.167
+  },
+  {
+    "word": "Kapler",
+    "start": 48.307,
+    "end": 48.688
+  },
+  {
+    "word": "was",
+    "start": 48.728,
+    "end": 48.868
+  },
+  {
+    "word": "born",
+    "start": 48.928,
+    "end": 49.148
+  },
+  {
+    "word": "today.",
+    "start": 49.188,
+    "end": 49.468
+  },
+  {
+    "word": "He",
+    "start": 50.248,
+    "end": 50.308
+  },
+  {
+    "word": "later",
+    "start": 50.348,
+    "end": 50.628
+  },
+  {
+    "word": "discovered",
+    "start": 50.688,
+    "end": 51.228
+  },
+  {
+    "word": "the",
+    "start": 51.268,
+    "end": 51.369
+  },
+  {
+    "word": "laws",
+    "start": 51.429,
+    "end": 51.669
+  },
+  {
+    "word": "of",
+    "start": 51.709,
+    "end": 51.789
+  },
+  {
+    "word": "planetary",
+    "start": 51.889,
+    "end": 52.349
+  },
+  {
+    "word": "motions,",
+    "start": 52.429,
+    "end": 52.889
+  },
+  {
+    "word": "also",
+    "start": 53.269,
+    "end": 53.469
+  },
+  {
+    "word": "known",
+    "start": 53.489,
+    "end": 53.669
+  },
+  {
+    "word": "as",
+    "start": 53.729,
+    "end": 53.949
+  },
+  {
+    "word": "Kapler",
+    "start": 54.49,
+    "end": 54.83
+  },
+  {
+    "word": "laws.",
+    "start": 54.87,
+    "end": 55.11
+  },
+  {
+    "word": "Also",
+    "start": 57.013,
+    "end": 57.253
+  },
+  {
+    "word": "in",
+    "start": 57.273,
+    "end": 57.353
+  },
+  {
+    "word": "1877,",
+    "start": 57.373,
+    "end": 57.853
+  },
+  {
+    "word": "the",
+    "start": 58.154,
+    "end": 58.754
+  },
+  {
+    "word": "first",
+    "start": 58.814,
+    "end": 59.054
+  },
+  {
+    "word": "official",
+    "start": 59.114,
+    "end": 59.474
+  },
+  {
+    "word": "test",
+    "start": 59.554,
+    "end": 59.814
+  },
+  {
+    "word": "cricket",
+    "start": 59.854,
+    "end": 60.195
+  },
+  {
+    "word": "match",
+    "start": 60.255,
+    "end": 60.595
+  },
+  {
+    "word": "in",
+    "start": 61.115,
+    "end": 61.195
+  },
+  {
+    "word": "history",
+    "start": 61.255,
+    "end": 61.635
+  },
+  {
+    "word": "began",
+    "start": 61.975,
+    "end": 62.275
+  },
+  {
+    "word": "and",
+    "start": 62.536,
+    "end": 62.656
+  },
+  {
+    "word": "it",
+    "start": 62.776,
+    "end": 62.836
+  },
+  {
+    "word": "was",
+    "start": 62.876,
+    "end": 63.036
+  },
+  {
+    "word": "between",
+    "start": 63.096,
+    "end": 63.516
+  },
+  {
+    "word": "Australia",
+    "start": 64.637,
+    "end": 65.517
+  },
+  {
+    "word": "and",
+    "start": 65.537,
+    "end": 65.597
+  },
+  {
+    "word": "England,",
+    "start": 65.857,
+    "end": 66.197
+  },
+  {
+    "word": "Australia",
+    "start": 66.958,
+    "end": 67.298
+  },
+  {
+    "word": "won",
+    "start": 67.338,
+    "end": 67.538
+  },
+  {
+    "word": "of",
+    "start": 67.578,
+    "end": 67.638
+  },
+  {
+    "word": "course,",
+    "start": 67.678,
+    "end": 67.938
+  },
+  {
+    "word": "but",
+    "start": 68.278,
+    "end": 68.418
+  },
+  {
+    "word": "not",
+    "start": 68.879,
+    "end": 69.019
+  },
+  {
+    "word": "that",
+    "start": 69.059,
+    "end": 69.179
+  },
+  {
+    "word": "anybody",
+    "start": 69.239,
+    "end": 69.539
+  },
+  {
+    "word": "cares.",
+    "start": 69.599,
+    "end": 69.959
+  },
+  {
+    "word": "You",
+    "start": 70.639,
+    "end": 70.759
+  },
+  {
+    "word": "also",
+    "start": 70.819,
+    "end": 71.02
+  },
+  {
+    "word": "know",
+    "start": 71.06,
+    "end": 71.18
+  },
+  {
+    "word": "that",
+    "start": 71.2,
+    "end": 71.36
+  },
+  {
+    "word": "Andrew",
+    "start": 71.56,
+    "end": 71.88
+  },
+  {
+    "word": "Jackson,",
+    "start": 71.9,
+    "end": 72.26
+  },
+  {
+    "word": "the",
+    "start": 72.28,
+    "end": 72.34
+  },
+  {
+    "word": "US",
+    "start": 72.4,
+    "end": 72.62
+  },
+  {
+    "word": "president,",
+    "start": 72.7,
+    "end": 73.241
+  },
+  {
+    "word": "was",
+    "start": 73.641,
+    "end": 73.761
+  },
+  {
+    "word": "also",
+    "start": 73.801,
+    "end": 74.061
+  },
+  {
+    "word": "born",
+    "start": 74.101,
+    "end": 74.361
+  },
+  {
+    "word": "on",
+    "start": 74.401,
+    "end": 74.481
+  },
+  {
+    "word": "15th",
+    "start": 74.561,
+    "end": 74.901
+  },
+  {
+    "word": "March",
+    "start": 74.961,
+    "end": 75.202
+  },
+  {
+    "word": "in",
+    "start": 75.422,
+    "end": 75.862
+  },
+  {
+    "word": "1767.",
+    "start": 75.902,
+    "end": 76.442
+  },
+  {
+    "word": "So,",
+    "start": 77.363,
+    "end": 77.623
+  },
+  {
+    "word": "if",
+    "start": 78.523,
+    "end": 78.563
+  },
+  {
+    "word": "you",
+    "start": 78.603,
+    "end": 78.663
+  },
+  {
+    "word": "want",
+    "start": 78.683,
+    "end": 78.823
+  },
+  {
+    "word": "to",
+    "start": 78.843,
+    "end": 78.963
+  },
+  {
+    "word": "be",
+    "start": 79.003,
+    "end": 79.103
+  },
+  {
+    "word": "president,",
+    "start": 79.143,
+    "end": 79.664
+  },
+  {
+    "word": "die",
+    "start": 80.044,
+    "end": 80.324
+  },
+  {
+    "word": "and",
+    "start": 80.524,
+    "end": 80.624
+  },
+  {
+    "word": "then",
+    "start": 80.684,
+    "end": 80.884
+  },
+  {
+    "word": "be",
+    "start": 81.244,
+    "end": 81.324
+  },
+  {
+    "word": "born",
+    "start": 81.344,
+    "end": 81.585
+  },
+  {
+    "word": "today",
+    "start": 81.605,
+    "end": 81.885
+  },
+  {
+    "word": "next",
+    "start": 82.105,
+    "end": 82.305
+  },
+  {
+    "word": "year",
+    "start": 82.345,
+    "end": 82.525
+  },
+  {
+    "word": "or",
+    "start": 83.686,
+    "end": 83.766
+  },
+  {
+    "word": "maybe",
+    "start": 83.786,
+    "end": 84.086
+  },
+  {
+    "word": "year",
+    "start": 84.306,
+    "end": 84.486
+  },
+  {
+    "word": "after",
+    "start": 84.546,
+    "end": 84.806
+  },
+  {
+    "word": "or",
+    "start": 85.927,
+    "end": 86.007
+  },
+  {
+    "word": "maybe",
+    "start": 86.027,
+    "end": 86.247
+  },
+  {
+    "word": "year",
+    "start": 86.267,
+    "end": 86.427
+  },
+  {
+    "word": "after.",
+    "start": 86.467,
+    "end": 86.727
+  },
+  {
+    "word": "So,",
+    "start": 88.031,
+    "end": 88.212
+  },
+  {
+    "word": "that",
+    "start": 88.432,
+    "end": 88.593
+  },
+  {
+    "word": "was",
+    "start": 88.633,
+    "end": 88.854
+  },
+  {
+    "word": "all",
+    "start": 89.034,
+    "end": 89.155
+  },
+  {
+    "word": "happened",
+    "start": 89.215,
+    "end": 89.536
+  },
+  {
+    "word": "today",
+    "start": 89.576,
+    "end": 89.837
+  },
+  {
+    "word": "happened",
+    "start": 90.018,
+    "end": 90.339
+  },
+  {
+    "word": "on",
+    "start": 90.379,
+    "end": 90.519
+  },
+  {
+    "word": "15th",
+    "start": 90.54,
+    "end": 90.981
+  },
+  {
+    "word": "March.",
+    "start": 91.061,
+    "end": 91.362
+  },
+  {
+    "word": "Other",
+    "start": 93.309,
+    "end": 93.49
+  },
+  {
+    "word": "things",
+    "start": 93.53,
+    "end": 93.731
+  },
+  {
+    "word": "also",
+    "start": 93.811,
+    "end": 94.032
+  },
+  {
+    "word": "happened",
+    "start": 94.072,
+    "end": 94.353
+  },
+  {
+    "word": "today",
+    "start": 94.373,
+    "end": 94.614
+  },
+  {
+    "word": "like",
+    "start": 95.135,
+    "end": 95.356
+  },
+  {
+    "word": "a",
+    "start": 96.038,
+    "end": 96.119
+  },
+  {
+    "word": "forward",
+    "start": 96.139,
+    "end": 96.46
+  },
+  {
+    "word": "to",
+    "start": 96.48,
+    "end": 96.56
+  },
+  {
+    "word": "brush",
+    "start": 96.58,
+    "end": 96.781
+  },
+  {
+    "word": "my",
+    "start": 96.801,
+    "end": 96.922
+  },
+  {
+    "word": "teeth.",
+    "start": 96.942,
+    "end": 97.062
+  }
+]

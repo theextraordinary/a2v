@@ -29,3 +29,36 @@ def transcribe_audio(audio_path, model_size='base', use_mock=False, latency_s=0.
             'text': seg['text'].strip(),
         })
     return segments
+
+
+def transcribe_words(audio_path, model_size='base', device=None):
+    try:
+        import whisperx
+    except Exception as e:
+        raise RuntimeError('whisperx is required for word-level timestamps. Install: pip install whisperx') from e
+
+    if device is None:
+        try:
+            import torch
+            device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        except Exception:
+            device = 'cpu'
+
+    compute_type = 'float16' if device == 'cuda' else 'int8'
+    model = whisperx.load_model(model_size, device, compute_type=compute_type)
+    result = model.transcribe(str(audio_path))
+
+    model_a, metadata = whisperx.load_align_model(language_code=result['language'], device=device)
+    result = whisperx.align(result['segments'], model_a, metadata, str(audio_path), device)
+
+    words = []
+    for seg in result.get('segments', []):
+        for w in seg.get('words', []):
+            if w.get('start') is None or w.get('end') is None:
+                continue
+            words.append({
+                'word': w['word'].strip(),
+                'start': float(w['start']),
+                'end': float(w['end']),
+            })
+    return words

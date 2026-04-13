@@ -1,4 +1,15 @@
+from pathlib import Path
+import os
 from functools import lru_cache
+
+# Force HF cache paths early
+_base_dir = Path(__file__).resolve().parents[1]
+_cache_dir = _base_dir / '.hf_cache'
+_cache_dir.mkdir(parents=True, exist_ok=True)
+os.environ['HF_HOME'] = str(_cache_dir)
+os.environ['HF_HUB_CACHE'] = str(_cache_dir)
+os.environ['TRANSFORMERS_CACHE'] = str(_cache_dir)
+
 from transformers import pipeline
 
 MODEL_ID = 'j-hartmann/emotion-english-distilroberta-base'
